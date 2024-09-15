@@ -2,21 +2,21 @@ DEVICE:=MSP430FR6989
 
 PATH_SRC     = src
 HAL_SRC      = $(PATH_SRC)/HAL
-PATH_DRIVER  = driverlib/MSP430F5xx_6xx
+PATH_DRIVER  = msp430_driverlib/driverlib/MSP430F5xx_6xx
 PATH_BUILD   = build/target
 PATH_OBJS    = build/target/objects
 BUILD_PATHS  = $(PATH_BUILD) $(PATH_OBJS)
 
 CC       = msp430-elf-gcc
 CFLAGS   = -I ./msp430-gcc-support-files/include
-CFLAGS  += -I ./driverlib/MSP430F5xx_6xx
+CFLAGS  += -I $(PATH_DRIVER)
 CFLAGS  += -I $(HAL_SRC)
 CFLAGS  += -O2 -D__$(DEVICE)__ -mmcu=$(DEVICE) -g -ffunction-sections -fdata-sections -DDEPRECATED
 CFLAGS  += -c
 
 LD       = msp430-elf-gcc
 LDFLAGS  = -L ./msp430-gcc-support-files/include
-LDFLAGS += -L ./driverlib/MSP430FR5xx_6xx
+LDFLAGS += -L $(PATH_DRIVER)
 LDFLAGS += -mmcu=$(DEVICE) -g -Wl,--gc-sections
 LDFLAGS += -T msp430fr6989.ld
 

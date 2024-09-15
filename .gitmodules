@@ -1,0 +1,6 @@
+[submodule "msp430_driverlib"]
+	path = msp430_driverlib
+	url = https://github.com/carloscn/msp430_driverlib.git
+[submodule "msp430-gcc-support-files"]
+	path = msp430-gcc-support-files
+	url = https://github.com/carloscn/msp430-gcc-support-files.git
