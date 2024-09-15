@@ -1,0 +1,1 @@
+./msp430-gcc-support-files/include/msp430fr6989.ld
